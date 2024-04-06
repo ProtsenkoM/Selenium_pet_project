@@ -19,7 +19,7 @@ class BasePage:
     def element_is_present(self, locator, time_out=5):
         return wait(self.driver, time_out).until(EC.presence_of_element_located(locator))
 
-    def element_are_present(self, locator, time_out=5):
+    def elements_are_present(self, locator, time_out=5):
         return wait(self.driver, time_out).until(EC.presence_of_all_elements_located(locator))
 
     def element_is_not_visible(self, locator, time_out=5):
@@ -29,6 +29,6 @@ class BasePage:
         return wait(self.driver, time_out).until(EC.element_to_be_clickable(locator))
 
     def go_to_element(self, element):
-        self.driver.execute_script("argument[0].scrollIntoView();", element)
+        self.driver.execute_script("arguments[0].scrollIntoView();", element)
 
 
